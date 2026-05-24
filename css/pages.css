@@ -1,0 +1,140 @@
+/* css/pages.css — Styles for About, Contact, Trek Detail pages */
+
+/* ===== PAGE HERO ===== */
+.page-hero {
+  position: relative; height: 55vh; min-height: 380px;
+  display: flex; align-items: center; justify-content: center;
+  background-size: cover; background-position: center;
+  margin-top: 0; padding-top: 80px;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(5,10,5,0.5), rgba(5,10,5,0.65));
+}
+.page-hero-content {
+  position: relative; z-index: 1; text-align: center;
+  color: var(--snow); padding: 2rem;
+}
+.page-hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900; margin: 0.5rem 0;
+}
+.page-hero-content h1 em { color: var(--accent); font-style: italic; }
+.page-hero-content p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-top: 0.5rem; }
+
+/* ===== ABOUT PAGE ===== */
+.about-story {
+  padding: 6rem 5%; background: var(--cream);
+}
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: center; max-width: 1100px; margin: 0 auto;
+}
+.about-text h2 {
+  font-family: var(--font-display); font-size: 2.2rem;
+  font-weight: 800; margin: 0.5rem 0 1.2rem;
+}
+.about-text h2 em { color: var(--accent); font-style: italic; }
+.about-text p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+.about-img img { border-radius: var(--radius); box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
+
+.team-section { padding: 5rem 5%; background: var(--cream); }
+.team-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem; max-width: 900px; margin: 0 auto;
+}
+.team-card {
+  background: var(--card-bg); border-radius: var(--radius);
+  overflow: hidden; text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform var(--transition);
+}
+.team-card:hover { transform: translateY(-5px); }
+.team-card img { height: 220px; object-fit: cover; width: 100%; }
+.team-card h3 { font-family: var(--font-display); font-size: 1.15rem; margin: 1rem 1rem 0.2rem; }
+.team-card p { font-size: 0.85rem; color: var(--accent); padding: 0 1rem; }
+.team-card span { display: block; font-size: 0.78rem; color: var(--muted); padding: 0.3rem 1rem 1.2rem; }
+
+/* ===== CONTACT PAGE ===== */
+.contact-section { padding: 6rem 5%; background: var(--cream); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem;
+  align-items: start; max-width: 1100px; margin: 0 auto;
+}
+.contact-info h2 {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 1rem;
+}
+.contact-info h2 em { color: var(--accent); font-style: italic; }
+.contact-info > p { color: var(--muted); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem; }
+.info-items { display: flex; flex-direction: column; gap: 0.8rem; }
+.info-item { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.9rem; color: var(--dark); }
+.info-item span { color: var(--muted); }
+
+.contact-form {
+  background: var(--card-bg); padding: 2.5rem; border-radius: var(--radius);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+}
+.form-group { margin-bottom: 1.4rem; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--dark); }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.75rem 1rem; border-radius: 8px;
+  border: 1.5px solid #ddd; font-family: var(--font-body); font-size: 0.9rem;
+  color: var(--dark); background: var(--snow); outline: none;
+  transition: border-color var(--transition);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+.form-group textarea { resize: vertical; }
+.form-msg { margin-top: 1rem; font-size: 0.88rem; text-align: center; }
+
+/* ===== TREK DETAIL PAGE ===== */
+.detail-meta-bar {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+  background: var(--forest); color: var(--snow);
+}
+.meta-item {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 1.5rem 3rem; border-right: 1px solid rgba(255,255,255,0.15);
+}
+.meta-item:last-child { border-right: none; }
+.meta-item span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.6); margin-bottom: 0.3rem; }
+.meta-item strong { font-family: var(--font-display); font-size: 1.2rem; color: var(--snow); }
+
+.detail-section { padding: 5rem 5%; background: var(--cream); }
+.detail-body {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  max-width: 1100px; margin: 3rem auto;
+}
+.itinerary h2, .inclusions h2 {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+.itinerary h2 em, .inclusions h2 em { color: var(--accent); font-style: italic; }
+.itinerary-list { list-style: none; counter-reset: day; }
+.itinerary-list li {
+  counter-increment: day; padding: 0.9rem 1rem 0.9rem 3.5rem; position: relative;
+  border-left: 2px solid #e0d8cc; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--muted);
+}
+.itinerary-list li::before {
+  content: counter(day); position: absolute; left: -14px; top: 50%; transform: translateY(-50%);
+  width: 26px; height: 26px; background: var(--accent); color: var(--snow);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 700;
+}
+.itinerary-list li strong { display: block; color: var(--dark); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.2rem; }
+.check-list li { font-size: 0.9rem; color: var(--muted); padding: 0.5rem 0; border-bottom: 1px solid #f0e8d8; }
+
+.book-cta {
+  text-align: center; background: var(--dark); padding: 4rem 2rem;
+  border-radius: var(--radius); max-width: 700px; margin: 0 auto;
+}
+.book-cta h2 { font-family: var(--font-display); font-size: 2rem; color: var(--snow); }
+.book-cta h2 em { color: var(--accent); font-style: italic; }
+.book-cta p { color: rgba(255,255,255,0.6); margin: 0.8rem 0; font-size: 0.95rem; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .about-grid, .contact-grid, .detail-body { grid-template-columns: 1fr; gap: 2rem; }
+  .detail-meta-bar { flex-direction: row; }
+  .meta-item { padding: 1rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+}

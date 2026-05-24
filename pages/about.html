@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — WanderHigh</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <a href="../index.html" class="nav-logo">Wander<span>High</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#treks">Treks</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html#treks" class="nav-cta">Book a Trek</a>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </nav>
+
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1400&q=80')">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="section-tag">OUR STORY</p>
+      <h1>About <em>WanderHigh</em></h1>
+      <p>Born in the mountains. Built for dreamers.</p>
+    </div>
+  </section>
+
+  <section class="about-story">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="section-tag">HOW IT STARTED</p>
+        <h2>We Were Trekkers <em>First</em></h2>
+        <p>WanderHigh was born on a cold January night at 3,800 metres, somewhere between Kedarkantha base camp and the summit. Our founder, Vikram Singh, had just led his tenth amateur group up a mountain — and realized that people weren't just looking for a trek. They were looking for a transformation.</p>
+        <p>Since 2018, we've taken over 2,000 people into the Himalayas — students, CEOs, grandparents, first-timers, and seasoned mountaineers. Every single one came back changed.</p>
+      </div>
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=700&q=80" alt="Our team trekking"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="section-header">
+      <p class="section-tag">THE PEOPLE</p>
+      <h2>Meet the <em>Team</em></h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=400&q=80" alt="Vikram Singh"/>
+        <h3>Vikram Singh</h3>
+        <p>Founder & Lead Guide</p>
+        <span>12 yrs | 50+ summits</span>
+      </div>
+      <div class="team-card reveal">
+        <img src="https://images.unsplash.com/photo-1558203728-00f45181dd84?w=400&q=80" alt="Ananya Rawat"/>
+        <h3>Ananya Rawat</h3>
+        <p>Trek Coordinator</p>
+        <span>6 yrs | Logistics expert</span>
+      </div>
+      <div class="team-card reveal">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80" alt="Rahul Thakur"/>
+        <h3>Rahul Thakur</h3>
+        <p>Safety & First Aid Lead</p>
+        <span>WFR Certified | 8 yrs</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Wander<span>High</span></div>
+        <p>Crafting unforgettable mountain experiences since 2018.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html#treks">Treks</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 Manali, Himachal Pradesh</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@wanderhigh.in</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 WanderHigh. All rights reserved.</p></div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

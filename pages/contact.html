@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — WanderHigh</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <a href="../index.html" class="nav-logo">Wander<span>High</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#treks">Treks</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html#treks" class="nav-cta">Book a Trek</a>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </nav>
+
+  <section class="page-hero" style="background-image: url('../images/kedarkantha.jpg')">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="section-tag">GET IN TOUCH</p>
+      <h1>Let's Plan Your <em>Adventure</em></h1>
+      <p>We respond within 24 hours. Usually much faster.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h2>We'd Love to <em>Hear From You</em></h2>
+        <p>Whether you have questions about a specific trek, need help choosing one, or want to plan a group expedition — drop us a message.</p>
+        <div class="info-items">
+          <div class="info-item">📍 <span>Village Naggar, Manali, HP 175143</span></div>
+          <div class="info-item">📞 <span>+91 98765 43210</span></div>
+          <div class="info-item">✉️ <span>hello@wanderhigh.in</span></div>
+          <div class="info-item">⏰ <span>Mon–Sat, 9AM – 7PM</span></div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="nameInput" placeholder="Rahul Sharma"/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="contactEmail" placeholder="rahul@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>Trek of Interest</label>
+          <select id="trekSelect">
+            <option value="">— Select a trek —</option>
+            <option>Kedarkantha Trek</option>
+            <option>Triund Trek</option>
+            <option>Hampta Pass</option>
+            <option>Rupin Pass Trek</option>
+            <option>Chopta Tungnath</option>
+            <option>Pin Parvati Pass</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="messageInput" rows="4" placeholder="Tell us about your group size, dates, experience level..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="submitForm()" style="width:100%;text-align:center;">Send Message →</button>
+        <p class="form-msg" id="formMsg"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Wander<span>High</span></div>
+        <p>Crafting unforgettable mountain experiences since 2018.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html#treks">Treks</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 Manali, Himachal Pradesh</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@wanderhigh.in</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 WanderHigh. All rights reserved.</p></div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function submitForm() {
+      const name = document.getElementById('nameInput').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const message = document.getElementById('messageInput').value.trim();
+      const msg = document.getElementById('formMsg');
+      if (!name || !email || !message) {
+        msg.textContent = '⚠️ Please fill in all required fields.';
+        msg.style.color = '#f44336';
+        return;
+      }
+      msg.textContent = `✅ Thanks ${name}! We'll get back to you at ${email} within 24 hours.`;
+      msg.style.color = '#4caf50';
+      document.getElementById('nameInput').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('messageInput').value = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trek Detail — WanderHigh</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <a href="../index.html" class="nav-logo">Wander<span>High</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#treks">Treks</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Now</a>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </nav>
+
+  <div id="trekDetailContent"></div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Wander<span>High</span></div>
+        <p>Crafting unforgettable mountain experiences since 2018.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html#treks">Treks</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 Manali, Himachal Pradesh</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@wanderhigh.in</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 WanderHigh. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const trekId = parseInt(params.get('id'));
+    const trek = treks.find(t => t.id === trekId);
+    const container = document.getElementById('trekDetailContent');
+
+    const itineraries = {
+      1: ["Arrive at Sankri base camp", "Trek to Juda Ka Talab (2.5 hrs)", "Juda Ka Talab to Kedarkantha base (3 hrs)", "Summit Kedarkantha at dawn", "Descend to Sankri via Hargaon", "Departure day"],
+      2: ["Drive from Dharamsala to Mcleod Ganj", "Trek Mcleod to Triund top (4–5 hrs)", "Camp overnight at Triund", "Sunrise at Triund, descend, departure"],
+      3: ["Drive Manali to Jobra, trek to Chika", "Chika to Balu Ka Ghera", "Balu Ka Ghera to Hampta Pass to Shea Goru", "Shea Goru to Chatru", "Drive Chatru to Chandratal, return to Manali"],
+      4: ["Dhaula to Sewa village", "Sewa to Rupin waterfalls", "Waterfalls to upper waterfalls", "Upper waterfalls to snow bridge", "Snow bridge to Rupin Pass summit", "Pass to Ronti Gad", "Ronti Gad to Sangla", "Departure from Sangla"],
+      5: ["Drive Haridwar to Chopta", "Acclimatization walk around Chopta", "Trek to Tungnath–Chandrashila summit", "Return to Chopta, drive back"],
+      6: ["Arrive Kheerganga base", "Trek to Kheerganga", "Kheerganga to Thakur Kuan", "Thakur Kuan to Odi Thach", "Odi Thach to Mantalai Lake", "Mantalai to Pin Parvati base", "Summit attempt: Pin Parvati Pass (5319m)", "Descent to Mudh village", "Rest at Mudh", "Drive Mudh to Manali", "Buffer/departure day"],
+      7: ["Drive from Haridwar to Govindghat (10-12 hrs)","Trek Govindghat to Ghangaria (14 km | 6-7 hrs)","Explore Valley of Flowers (5 km trail | 4-5 hrs)","Visit Hemkund Sahib Gurudwara (4329m | 6 km | 5-6 hrs)","Ghangaria to Govindghat, drive to Haridwar","Departure from Haridwar"],
+      8: ["Drive from Dehradun to Barsu village (8-9 hrs)","Barsu to Barnala Tal meadows (4 km | 3-4 hrs)","Barnala Tal to Dayara Bugyal (5 km | 4 hrs)","Explore Dayara Bugyal, acclimatization day","Dayara Bugyal to Dodital via Bakaria Top (6 km | 5 hrs)","Dodital to Sangamchatti, drive to Dehradun"],
+      9: ["Drive from Srinagar to Sonamarg, trek to Nichnai (10 km | 5 hrs)","Nichnai to Vishansar Lake (11 km | 6 hrs)","Vishansar to Krishansar to Gadsar Lake (14 km | 7 hrs)","Gadsar to Satsar Lakes (12 km | 6 hrs)","Satsar to Gangabal Twin Lakes (11 km | 6 hrs)","Gangabal to Naranag (13 km | 6 hrs)","Drive Naranag to Srinagar, departure"],
+      10: ["Drive from Dehradun to Sankri (9-10 hrs)","Sankri to Taluka drive, trek to Gangar (5 km | 3 hrs)","Gangar to Kalkattiyadhar (9 km | 5-6 hrs)","Kalkattiyadhar to Har Ki Dun valley (8 km | 5 hrs)","Explore Har Ki Dun, rest and acclimatization","Har Ki Dun to Gangar (13 km | 6-7 hrs)","Gangar to Sankri, drive to Dehradun"]
+    };
+
+    if (trek) {
+      document.title = `${trek.name} — WanderHigh`;
+      const days = itineraries[trek.id] || [];
+      container.innerHTML = `
+        <section class="page-hero" style="background-image:url('../${trek.image}'">
+          <div class="page-hero-overlay"></div>
+          <div class="page-hero-content">
+            <p class="section-tag">📍 ${trek.region}</p>
+            <h1>${trek.name}</h1>
+            <p>${trek.description}</p>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-meta-bar">
+            <div class="meta-item"><span>Duration</span><strong>${trek.duration}</strong></div>
+            <div class="meta-item"><span>Max Altitude</span><strong>${trek.altitude}</strong></div>
+            <div class="meta-item"><span>Difficulty</span><strong style="text-transform:capitalize">${trek.difficulty}</strong></div>
+            <div class="meta-item"><span>Price</span><strong>${trek.price} / person</strong></div>
+          </div>
+
+          <div class="detail-body">
+            <div class="itinerary reveal">
+              <h2>Day-by-Day <em>Itinerary</em></h2>
+              <ol class="itinerary-list">
+                ${days.map((d, i) => `<li><strong>Day ${i+1}</strong>${d}</li>`).join('')}
+              </ol>
+            </div>
+
+            <div class="inclusions reveal">
+              <h2>What's <em>Included</em></h2>
+              <ul class="check-list">
+                <li>✅ Experienced certified trek leader</li>
+                <li>✅ All camping equipment (tents, sleeping bags, mats)</li>
+                <li>✅ All meals during the trek</li>
+                <li>✅ Forest/park entry permits</li>
+                <li>✅ First aid kit & oxygen cylinder</li>
+                <li>✅ Transportation from base city to trek start</li>
+              </ul>
+              <h2 style="margin-top:2rem">Not <em>Included</em></h2>
+              <ul class="check-list">
+                <li>❌ Personal travel insurance</li>
+                <li>❌ Personal trekking gear (boots, jacket)</li>
+                <li>❌ Any expenses of personal nature</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="book-cta reveal">
+            <h2>Ready to <em>Trek?</em></h2>
+            <p>Limited slots available for upcoming batches. Secure your spot today.</p>
+            <a href="contact.html" class="btn-primary" style="display:inline-block;margin-top:1rem">Book This Trek →</a>
+          </div>
+        </section>
+      `;
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    } else {
+      container.innerHTML = `<div style="text-align:center;padding:8rem 2rem"><h2>Trek not found.</h2><a href="../index.html" class="btn-primary" style="display:inline-block;margin-top:1rem">← Back to Home</a></div>`;
+    }
+  </script>
+</body>
+</html>
