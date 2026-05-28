@@ -8,7 +8,7 @@ const treks = [
     difficulty: "easy",
     duration: "6 Days",
     altitude: "3810m",
-    price: "₹8,500",
+    price: "₹6,999",
     tag: "Most Popular",
     description: "A perfect winter trek through snow-draped forests and open meadows with stunning 360° summit views.",
     image: "images/kedarkantha.jpg"
@@ -20,7 +20,7 @@ const treks = [
     difficulty: "easy",
     duration: "2 Days",
     altitude: "2875m",
-    price: "₹3,200",
+    price: "₹2,499",
     tag: "Weekend Getaway",
     description: "A beginner-friendly trail above Mcleod Ganj with magical views of the Dhauladhar range.",
     image: "images/triund.jpg"
@@ -32,7 +32,7 @@ const treks = [
     difficulty: "moderate",
     duration: "5 Days",
     altitude: "4270m",
-    price: "₹11,000",
+    price: "₹8,999",
     tag: "Best Scenery",
     description: "Cross from the lush Kullu valley into the stark Lahaul desert — two worlds in one trek.",
     image: "images/hampta.jpg"
@@ -44,7 +44,7 @@ const treks = [
     difficulty: "hard",
     duration: "8 Days",
     altitude: "4650m",
-    price: "₹14,500",
+    price: "₹11,999",
     tag: "Wildest Route",
     description: "Waterfalls, hanging villages, snow bridges — Rupin Pass is unlike anything you've ever trekked.",
     image: "images/rupin.jpg"
@@ -56,7 +56,7 @@ const treks = [
     difficulty: "easy",
     duration: "3 Days",
     altitude: "3680m",
-    price: "₹5,500",
+    price: "₹4,499",
     tag: "Mini Switzerland",
     description: "Trek to the highest Shiva temple in the world through stunning rhododendron forests.",
     image: "images/chopta.jpg"
@@ -68,7 +68,7 @@ const treks = [
     difficulty: "hard",
     duration: "11 Days",
     altitude: "5319m",
-    price: "₹22,000",
+    price: "₹15,999",
     tag: "Expert Only",
     description: "One of India's most challenging crossings — connecting the green Parvati valley to the barren Pin valley.",
     image: "images/pinparvati.jpg"
@@ -80,7 +80,7 @@ const treks = [
     difficulty: "moderate",
     duration: "6 Days",
     altitude: "3858m",
-    price: "₹8,000",
+    price: "₹7,499",
     tag: "UNESCO Heritage",
     description: "A UNESCO World Heritage trek through a breathtaking valley bursting with hundreds of alpine wildflowers, glaciers, and rare Himalayan wildlife.",
     image: "images/valley of flowers.jpg"
@@ -92,7 +92,7 @@ const treks = [
   difficulty: "easy",
   duration: "6 Days",
   altitude: "3658m",
-  price: "₹8,200",
+  price: "₹5,999",
   tag: "Best Meadows",
   description: "One of the most beautiful high-altitude meadows in India, Dayara Bugyal offers vast rolling grasslands, snow peaks and stunning 360° Himalayan views.",
   image: "images/dayarabugyal.jpg"
@@ -104,7 +104,7 @@ const treks = [
   difficulty: "moderate",
   duration: "7 Days",
   altitude: "4250m",
-  price: "₹13,500",
+  price: "₹12,999",
   tag: "Most Scenic",
   description: "A surreal trek through 7 alpine lakes surrounded by snow-capped peaks, vast meadows and some of the most jaw-dropping scenery in all of Asia.",
   image: "images/kashmirgreatlakes.jpg"
@@ -116,7 +116,7 @@ const treks = [
   difficulty: "easy",
   duration: "7 Days",
   altitude: "3566m",
-  price: "₹9,000",
+  price: "₹6,999",
   tag: "Valley of Gods",
   description: "Trek through ancient villages, dense forests and the mythological Har Ki Dun valley — believed to be the route Pandavas took to heaven.",
   image: "images/harkidun.jpg"
