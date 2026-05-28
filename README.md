@@ -1,6 +1,6 @@
 # 🏔️ WanderHigh — Himalayan Trek Experiences
 
-A fully responsive travel agency website built with pure HTML, CSS, and JavaScript — no frameworks, no libraries.
+A fully responsive Himalayan trekking agency website built with pure HTML, CSS, and JavaScript — no frameworks, no libraries. Features 10 real Himalayan treks with dynamic filtering, scroll animations, and multi-page navigation.
 
 ![WanderHigh](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80)
 
@@ -20,6 +20,8 @@ WanderHigh is a fictional Himalayan trekking agency website created as a fronten
 ## ✨ Features
 
 - 🎨 **Modern UI Design** — Clean, professional design with custom color palette and typography
+- 🏔️ **10 Himalayan Treks** — Kedarkantha, Hampta Pass, Kashmir Great Lakes, Valley of Flowers and more
+- 💰 **Affordable Pricing** — Trek packages starting from ₹2,499 per person
 - 🔍 **Filter Treks** — Filter by difficulty (Easy / Moderate / Hard) using vanilla JS
 - 📱 **Fully Responsive** — Works perfectly on mobile, tablet and desktop
 - 🎞️ **Scroll Animations** — Elements animate in using Intersection Observer API
